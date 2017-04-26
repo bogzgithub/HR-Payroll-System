@@ -1,0 +1,354 @@
+/* for universal */
+
+body {		
+		background-color:#ecf0f5;
+
+	}
+
+.form-control {
+	border:1px solid #99a3a4;
+}
+
+.content-div {
+	margin-top:10px;
+}
+
+.btn-login {
+	margin-right:15px;
+}
+
+/* for MainForm.php but use in universal because it is a header */
+.lloyds-logo {
+	width:30px;
+	float: left;
+	margin-top:-5px;
+}
+
+.content {
+	margin-top:50px;
+}
+
+.log-out-div {
+	text-align: center;
+	border-bottom:1px solid #BDBDBD;
+	background-color:#3c8dbc;
+	margin-top:-10px;
+}
+
+.log-out-menu{
+	margin-top:22px;
+	width:300px;
+}
+
+.log-out-pic {
+	width:100px;
+	height:100px;
+	border-radius: 100px;
+	z-index: 5;
+	border:3px solid;
+	border-color:rgba(255, 255, 255, 0.2);
+	margin-top:15px;
+}
+
+.log-out-p {
+	z-index: 5;
+	color:rgba(255, 255, 255, 0.8);
+	font-size: 17px;
+	margin-top: 10px;
+}
+
+.log-out-footer {
+	background-color:#f0f0f0;
+	padding:10px;
+	margin-bottom: -5px;
+}
+
+.breadcrumb {
+	border-radius:0;
+	padding:10px 15px;
+	background:#e9ecf2;
+	box-shadow:0 1px 1px rgba(0, 0, 0, .05);
+	margin:0;
+	list-style:none;
+}
+
+.sidebar ul.nav a:hover, .sidebar ul.nav li.parent ul li a:hover{
+	color:#ffffff;
+}
+
+
+
+.sidebar ul.nav a, .sidebar ul.nav li.parent ul li{
+	background-color: #222d32;
+}
+
+.sidebar ul.nav a {
+	color:rgba(255, 255, 255, 0.8);
+}
+
+.sidebar ul.nav li.parent ul > li > a > span {
+	color:rgba(255, 255, 255, 0.8);
+}
+
+.sidebar ul.nav li.parent ul > li > a > span:hover {
+	color:#ffffff;
+	
+}
+
+.sidebar ul.nav li.parent ul > li > a {
+	text-decoration: none;
+}
+
+.sidebar ul.nav li.parent ul > li > a {
+	border:none;
+	display:block;
+	padding-left: 30px;
+	line-height:40px;
+
+}
+
+
+.sidebar ul.nav ul.children {
+	width:auto;
+	padding: 0;
+	margin: 0;
+	background:#f9f9f9;
+}
+
+.sidebar ul.nav li.divider {
+	margin-top:0px;
+	margin-bottom:5px;
+	border-bottom:2px solid #eee;
+}
+
+.breadcrumb li a:hover {
+	text-decoration: none;
+}
+
+.breadcrumb {
+	margin-left:-15px;
+}
+
+.content-element {
+	margin-top:10px;
+	border:1px solid #BDBDBD;
+
+}
+
+.content-element-2{
+	margin-top: -10px;
+}
+
+textarea {
+	resize:none;
+}
+
+.red-asterisk {
+	float:right;
+	font-size:20px;
+	margin-bottom:-10px;
+	color: #943126 ;
+}
+
+.parent ul.children li a.active-sub-menu {
+	background-color: #1d8348 ;
+}
+
+.panel-success>.custom-panel-heading {
+	background-color:#357ca5;
+	color:#ffffff;
+	text-align: center;
+}
+
+
+
+/* for scrollbar */
+::-webkit-scrollbar {
+      width:7px;
+} /* this targets the default scrollbar (compulsory) */
+
+::-webkit-scrollbar-track {
+      background-color: #566573 ;
+} /* the new scrollbar will have a flat appearance with the set background color */
+ 
+::-webkit-scrollbar-thumb {
+      background-color:#2e86c1 ; 
+} /* this will style the thumb, ignoring the track */
+ 
+::-webkit-scrollbar-button {
+      background-color: #1b4f72  ;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ 
+::-webkit-scrollbar-corner {
+      background-color: black;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+
+/* customize table tr class design
+table.table>tbody>tr.success>td {
+	background-color:#239b56;
+}
+
+.table-hover>tbody>tr.success:hover>td {
+	background-color:#28b463;
+}
+
+
+.table-hover>tbody>tr.info>td {
+	background-color:#154360;
+}
+
+.table-hover>tbody>tr.info:hover>td {
+	background-color:#21618c;
+} */
+
+
+.action-a:hover {
+	text-decoration: none;
+	color:#23527c;
+}
+
+
+/* for xs */
+@media (max-width:767px){
+	
+	.log-out-menu{
+		margin-top:8px;
+		width:300px;
+	}
+
+
+}
+
+
+/* for sm */
+@media (min-width:768px){
+
+	/* for MainForm.php but use in universal because it is a header */
+	.full-name {
+		margin-top:15px;
+	}
+
+	.content {
+		margin-left:23%;
+		width:77%;
+
+	}
+
+	.sidebar{
+		width:23%;
+		position: fixed;
+		border-right:1px solid #BDBDBD;
+		top:50px;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;
+		display:block;
+		margin:0;
+		padding:0;
+		overflow-x:hidden;
+		overflow-y:auto;
+		background-color:#fff;
+		box-shadow:1px 0px 10px rgba(0, 0, 0, .05);
+		background-color:#222d32;
+	}
+	
+	.profile-pic {
+		width:150px;
+		height:150px;
+		border-radius: 100px;
+		border-color:rgba(255, 255, 255, 0.2);
+		border:3px solid;
+		z-index: 5;
+	}
+	
+
+	/* for government logo's */
+	.government-logo {
+		width:20px;
+		height:15px;
+		margin-top:-3px;
+	}
+
+	/* for add new of items */
+	.custom-add-items , .custom-add-items:hover{
+		color:#186a3b;
+		text-decoration: none;
+	}
+
+
+	/*.sidebar a {
+		font-size:13px;
+	}*/
+
+
+
+}
+
+/* for xs */
+@media (min-width:992px){
+	/* for index.php LOG IN FORM */
+	.lbl-username {
+		margin-right:-15px;
+	}
+
+	.sidebar {
+		width:21%;
+	}
+
+	.content {
+		margin-left:21%;
+		width:79%;
+	}
+
+	.profile-pic {
+		width:150px;
+		height:150px;
+		border-radius: 100px;
+		border-color:rgba(255, 255, 255, 0.2);
+		border:3px solid;
+		z-index: 5;
+	}
+
+	/* additional as of 4/17/2017 */
+	.btn-upload-attendance {
+		margin-left:100px;
+		margin-top:5px;
+	}
+
+	.upload-div {
+		margin-top:15px;
+	}
+
+	.upload-profile-pic {
+		margin-top:5px;
+	}
+
+	.confirm-pass {
+	margin-left:-25px;
+	}
+
+	.txt-confirm-pass {
+		width:57%;
+	}
+
+	/* for calendar design in events dashboard*/
+
+}
+
+/* for xs */
+@media (min-width:1200px){
+
+	.sidebar {
+		width:17%;
+	}
+
+	.content {
+		margin-left:17%;
+		width:83%;
+	}
+
+	/* for calendar design in events dashboard*/
+	
+
+}
