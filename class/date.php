@@ -1,7 +1,6 @@
 <?php
 
 class date{
-
 	public function getDate(){
 		// FOR CURRENT DATE AND TIME PURPOSE
 		date_default_timezone_set("Asia/Manila");
@@ -25,6 +24,11 @@ class date{
 	public function dateFormat($date){
 		$date_create = date_create($date);
 		$date_format = date_format($date_create, 'F d,Y');
+		return $date_format;
+	}
+	public function dateFormatMonthYear($date){
+		$date_create = date_create($date);
+		$date_format = date_format($date_create, 'F Y');
 		return $date_format;
 	}
 
