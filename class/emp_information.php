@@ -49,14 +49,14 @@ class EmployeeInformation extends Connect_db{
 													position_id,Birthdate,Gender,ContactNo,EmailAddress,
 													ProfileImage,ProfilePath,Username,
 													Password,SSS_No,PagibigNo,
-													TinNo,PhilhealthNo,Salary,DateCreated)
+													TinNo,PhilhealthNo,Salary,ActiveStatus,DateCreated)
 											VALUES ('','','$lname','$fname',
 													'$mname','$address','$role','$department',
 													'$position','$birthdate','$gender',
 													'$contactNo','$email','$profileImage','$profilePath',
 													'$username','$password','$sssNo',
 													'$pagibigNo','$tinNo','$philhealthNo',
-													'','$dateCreated')";
+													'','1','$dateCreated')";
 		$sql = mysqli_query($connect,$insert_qry);
 
 	}
@@ -72,6 +72,14 @@ class EmployeeInformation extends Connect_db{
 	public function checkExistUsername($username){
 		$connect = $this->connect();
 		$num_rows = mysqli_num_rows(mysqli_query($connect,"SELECT * FROM tb_employee_info WHERE Username = '$username'"));
+		return $num_rows;
+	}
+
+
+	// for checking if the user id is exist in the database
+	public function checkExistEmpId($emp_id){
+		$connect = $this->connect();
+		$num_rows = mysqli_num_rows(mysqli_query($connect,"SELECT * FROM tb_employee_info WHERE emp_id = '$emp_id'"));
 		return $num_rows;
 	}
 
@@ -98,6 +106,34 @@ class EmployeeInformation extends Connect_db{
 				$row_position = mysqli_fetch_object($result_position);
 				$position_val = $row_position->Position;
 
+				// for active or inactive
+				$active_stat = $row->ActiveStatus;
+				// if active
+				$active_value_action = "";
+				if ($active_stat == 1){
+					// value is dynamic
+					$active_value_action = "Inactive";
+				}
+
+				// if inactive
+				if ($active_stat == 0){
+					// value is dynamic
+					$active_value_action = "&nbsp;&nbsp;Active&nbsp;&nbsp;";
+				}
+
+				$active_value = "";
+				if ($active_stat == 1){
+					// value is dynamic
+					$active_value = "Active";
+				}
+
+				if ($active_stat == 0){
+					// value is dynamic
+					$active_value = "Inactive";
+				}
+
+
+
 				// emp_id = 1 for ADMIN
 				if ($row->emp_id != 1){
 					echo "<tr id=".$row->emp_id.">";
@@ -105,10 +141,14 @@ class EmployeeInformation extends Connect_db{
 						echo "<td>".$row->Address."</td>";
 						echo "<td>".$position_val."</td>";
 						echo "<td>".$row->ContactNo."</td>";
+						echo "<td>".$active_value."</td>";
 						echo "<td>";
-								echo "<span class='glyphicon glyphicon-pencil' style='color:#b7950b'></span> <a href='#' id='edit_deptartment' class='action-a'>Edit</a>";
+								echo "<span class='glyphicon glyphicon-pencil' style='color:#b7950b'></span> <a href='#' id='' class='action-a'>Edit</a>";
 								echo "<span> | </span>";
-								echo "<span class='glyphicon glyphicon-trash' style='color:#515a5a'></span> <a href='#' id='delete_department' class='action-a'>Delete</a>";
+								echo "<span class='glyphicon glyphicon-stats' style='color:#515a5a'></span> <a href='#' id='' class='action-a'>$active_value_action</a>";
+								echo "<span> | </span>";
+								echo "<span class='glyphicon glyphicon-eye-open' style='color:#515a5a'></span> <a href='#' id='view_emp_profile' class='action-a'>View</a>";
+								
 							echo "</td>";
 					echo "</tr>";
 				}

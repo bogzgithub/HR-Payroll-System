@@ -37,7 +37,7 @@ class Role extends Connect_db{
 
 						// for HR and Payroll admin pde ding magcreate ng employee pero dapat user lang pde nyang icr8
 						if ($role_id == 2 || $role_id == 3){
-							if ($role_id != $row->role_id) {
+							if ($row->role_id == 4) {
 							echo "<option value='$row->role_id' selected='selected'>"; // auto select para ok na mismo
 								echo $row->role_value;
 							echo "</option>";
